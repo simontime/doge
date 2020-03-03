@@ -19,7 +19,7 @@ LRESULT CALLBACK CBTProc(INT nCode, WPARAM wParam, LPARAM lParam)
  
 int CBTMessageBoxIndirect(const MSGBOXPARAMSA *lpmbp)
 {
-	hhk = SetWindowsHookEx(WH_CBT, &CBTProc, 0, GetCurrentThreadId());
+	hhk = SetWindowsHookEx(WH_CBT, &CBTProc, NULL, GetCurrentThreadId());
 	return MessageBoxIndirect(lpmbp);
 }
 
